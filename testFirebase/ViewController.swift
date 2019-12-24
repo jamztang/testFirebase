@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import iOSFramework
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let obj = Object()
+        print("obj list \(obj.list)")
         // Do any additional setup after loading the view.
     }
 
