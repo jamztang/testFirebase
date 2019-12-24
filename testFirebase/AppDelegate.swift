@@ -7,14 +7,29 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseRemoteConfig
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+
+        if FirebaseApp.app() == nil {
+//            FirebaseApp.configure()
+
+            let _ = RemoteConfig.remoteConfig()
+
+//            // firebase analytics user  property "crash_report_user_id"
+//            Analytics.setUserProperty(App.shared.crashReportUserID, forName: "crash_report_user_id")
+//
+//            // manually set a first install time for A/B testing
+//            let gnFirstOpenTime = String(describing: App.shared.firstOpenTime.timeIntervalSince1970)
+//            Analytics.setUserProperty(gnFirstOpenTime, forName: "gn_first_open_time")
+        }
+        
         return true
     }
 
